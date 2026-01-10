@@ -1,0 +1,13 @@
+# Added by alman (AL4)
+# Device-mapper core + verity target
+dm_mod
+dm_verity
+
+# OverlayFS for writable upper layer
+overlay
+
+# Optional: include virtio modules (safe even if built-in)
+virtio
+virtio_pci
+virtio_ring
+virtio_blk

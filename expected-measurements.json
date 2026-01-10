@@ -1,0 +1,49 @@
+{
+
+  "example": {
+    "al": 2,
+    "append": "root=/dev/vda2 rw rootwait console=ttyS0,115200n8",
+    "cpu_types": [
+      {
+        "kind": "type",
+        "type": "EPYC-Milan"
+      },
+      {
+        "kind": "type",
+        "type": "EPYC-Genoa"
+      }
+    ],
+    "cpu_types_config": "/home/ubuntu/attestation-level-manager/cpu-types.json",
+    "errors": {},
+    "initrd": "",
+    "kernel": "",
+    "mode": "snp",
+    "ovmf": "/home/ubuntu/ovmf/al12/OVMF.fd",
+    "timestamp_utc": "2026-01-10T03:59:50Z",
+    "vcpus": 2,
+    "vmm_type": "QEMU"
+  },
+  "example2": {
+    "al": 4,
+    "append": "root=/dev/mapper/vroot ro rootwait rootfstype=ext4 console=ttyS0,115200n8 fsck.mode=skip alman_roothash=8796b909f109aa2ae507a21d8e21b6ce81e4dcbf1199624fd6a9453f3e390a98",
+    "cpu_types": [
+      {
+        "kind": "type",
+        "type": "EPYC-Milan"
+      },
+      {
+        "kind": "type",
+        "type": "EPYC-Genoa"
+      }
+    ],
+    "cpu_types_config": "/home/ubuntu/attestation-level-manager/cpu-types.json",
+    "errors": {},
+    "initrd": "/home/ubuntu/attestation-level-manager/work/cache/boot/example2/initrd.img-6.8.0-31-generic",
+    "kernel": "/home/ubuntu/attestation-level-manager/work/cache/boot/example2/vmlinuz-6.8.0-31-generic",
+    "mode": "snp",
+    "ovmf": "/home/ubuntu/ovmf/al34/OVMF.fd",
+    "timestamp_utc": "2026-01-10T04:12:56Z",
+    "vcpus": 2,
+    "vmm_type": "QEMU"
+  }
+}
