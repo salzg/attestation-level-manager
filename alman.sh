@@ -778,7 +778,7 @@ EOF
 
   log "Updating initramfs inside guest..."
 
-  chroot "$mnt" /bin/bash -lc "update-initramfs -u"
+  chroot "$mnt" /bin/bash -lc "SOURCE_DATE_EPOCH=1234 && update-initramfs -u"
   umount "$mnt/proc" || true
   umount "$mnt/sys" || true
   umount "$mnt/dev" || true
