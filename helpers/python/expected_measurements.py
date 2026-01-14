@@ -197,6 +197,7 @@ def merge_vm_record_strict(existing: Dict, update: Dict) -> Dict:
         "cpu_types",
         "all",
         "errors",
+        "measurements"
     )
     for k in owned_keys:
         if k in update:
