@@ -451,6 +451,7 @@ network:
     driver: virtio_net
    set-name: eth0
    dhcp4: true
+   dhcp-identifier: mac
 EOF
 
   mount -t proc none "$mnt/proc"
