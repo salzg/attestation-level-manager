@@ -347,7 +347,7 @@ host_check() {
 
   [[ -x "$QEMU_BIN" ]] || die "QEMU binary not found/executable: $QEMU_BIN"
   [[ -f "$OVMF_CODE" ]] || die "OVMF code not found: $OVMF_CODE"
-  [[ -f "$OVMF_VARS" ]] || die "OVMF vars template not found: $OVMF_VARS"
+  [[ -f "$OVMF_VARS" ]] || die "OVMF vars not found: $OVMF_VARS"
 
   if [[ "$AL" -eq 4 ]]; then
     require_cmds veritysetup
