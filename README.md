@@ -173,9 +173,9 @@ Based on the base image, specific VM images are created as overlays to the base 
 
 Examples:
 ```
-sudo ./alman.sh --al 2 --name some-AL2-VM
-sudo ./alman.sh --al 0 --name no-AL-VM
-sudo ./alman.sh --al 4 --name some AL4-VM
+sudo ./alman.sh build-vm --al 2 --name some-AL2-VM
+sudo ./alman.sh build-vm --al 0 --name no-AL-VM
+sudo ./alman.sh build-vm --al 4 --name some AL4-VM
 ```
 
 Optional Arguments
