@@ -32,7 +32,9 @@ set -euo pipefail
 #   set-boot-guard --al 3|4 --name vm1
 #   make-verity --al 4 --name vm1
 #       returns a roothash, used for define, save as ROOTHASH (env) for convenience
-#   define --al N --name vm1 ...
+#   define --al N --name vm1 [--mem-mb N] [--vcpus N] [--dryrun]
+#       AL3/AL4: [--kernel PATH --initrd PATH] [--cmdline <string>] [--no-auto-boot-artifacts] [--al4-upper-mode disk|tmpfs] [--al4-tmpfs-size 512M|1G|...]
+#       sev-snp-measure: [--sev-snp-measure-py PATH] [--cpu-types-json <path>] [--legal-cpu-types-json <path>] [--expected-measurements-json <path>]
 #   start --name vm1
 #   console --name vm1
 #   undefine --name vm1
@@ -1380,7 +1382,7 @@ Commands:
   apply-al --al 3|4 --name vm1
   set-boot-guard --al 3|4 --name vm1
   make-verity --al 4 --name vm1
-  define --al N --name vm1 [--mem-mb N] [--vcpus N]
+  define --al N --name vm1 [--mem-mb N] [--vcpus N] [--dryrun]
          AL3/AL4: [--kernel PATH --initrd PATH] [--cmdline <string>] [--no-auto-boot-artifacts] [--al4-upper-mode disk|tmpfs] [--al4-tmpfs-size 512M|1G|...]
          sev-snp-measure: [--sev-snp-measure-py PATH] [--cpu-types-json ${CPU_TYPES_JSON_DEFAULT}] [--legal-cpu-types-json ${LEGAL_CPU_TYPES_JSON_DEFAULT}] [--expected-measurements-json ${EXPECTED_MEASUREMENTS_JSON_DEFAULT}]
   start vm1 | --name vm1
