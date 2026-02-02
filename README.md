@@ -162,9 +162,9 @@ sudo ./alman.sh build-base
 Optional args are
 
 ```
--- force                            overwrite base image
--- additional-cmds-file <path>      image customisation file, additional_commands.sh by default
--- base-path <path>                 destination path of base image, defaults to ./cache/base-ubuntu-noble.qcow2
+--force                            overwrite base image
+--additional-cmds-file <path>      image customisation file, additional_commands.sh by default
+--base-path <path>                 destination path of base image, defaults to ./cache/base-ubuntu-noble.qcow2
 ```
 
 ### Build specific VM images
@@ -181,9 +181,9 @@ sudo ./alman.sh --al 4 --name some AL4-VM
 Optional Arguments
 
 ```
--- base-path <path>                 path to base image to use, default ./cache/base-ubuntu-noble.qcow2
--- size-gb <N>                      size of image to be created, default 12G
--- ssh-pubkey <path-to-key>         path to ssh key to include
+--base-path <path>                 path to base image to use, default ./cache/base-ubuntu-noble.qcow2
+--size-gb <N>                      size of image to be created, default 12G
+--ssh-pubkey <path-to-key>         path to ssh key to include
 ```
 
 ### Apply AL (AL3 & AL4 only)
@@ -242,7 +242,7 @@ ALman also wraps the following virsh commands: `start` (start your defined domai
 ## Useful commands for troubleshooting
 
 ### virsh, QEMU and kvm hijinks
-Some permission errors stem from weird QEMU/KVM permission alignments. This can be most likely fixed by edittomg `/etc/libvirt/qemu.conf` to use root.
+Some permission errors stem from weird QEMU/KVM permission alignments. This can be most likely fixed by editing `/etc/libvirt/qemu.conf` to use root.
 
 ```
 vim /etc/libvirt/qemu.conf
