@@ -77,7 +77,7 @@ sudo ln /usr/bin/python3 /usr/bin/python
 sudo usermod -aG libvirt,kvm "$USER"
 ```
 
-Clone and follow the instructions in AMD's [AMDESE/AMDSEV snp-latest branch](https://github.com/AMDESE/AMDSEV/tree/snp-latest) to set up your host firmware. You probably don't need to build the kernel as any 6.11+ kernel should suffice.  In particular, you want the OVMF and QEMU builds using the following commands. If your host kernel does not work for some reason, consider building one according to the repo's instructions. Depending on your setup you might need to sudo the commands.
+Clone and follow the instructions in AMD's [AMDESE/AMDSEV snp-latest branch](https://github.com/AMDESE/AMDSEV/tree/snp-latest) to set up your host firmware. You probably don't need to build the kernel as any 6.11+ kernel should suffice.  In particular, you want the OVMF and QEMU builds using the following commands. If your host kernel does not work for some reason, consider building one according to the repo's instructions. Depending on your setup you might need to sudo the commands. You can check whether your host supports SEV-SNP in the end via [snphost](https://github.com/virtee/snphost).
 
 
 ```
@@ -99,13 +99,13 @@ cp ~/src/AMDSEV/usr/local/share/qemu/OVMF* ~/ovmf/al12/
 
 You have build the Guest Firmware for AL1 and AL2. Now, you need to build Guest FW which enables kernel hashing, so that AL3 and AL4 can be reached.
 
-Edit `common.sh` in the AMD repo on line 173 (as of time of writing) from 
+Edit `common.sh` in the AMD repo on line 173 (as of time of writing) from
 
 ```
 BUILD_CMD="nice build -q --cmd-len=64436 -DDEBUG_ON_SERIAL_PORT=TRUE -n $(getconf _NPROCESSORS_ONLN) ${GCCVERS:+-t $GCCVERS} -a X64 -p OvmfPkg/OvmfPkgX64.dsc"
 ```
 
-to 
+to
 ```
 BUILD_CMD="nice build -q --cmd-len=64436 -DDEBUG_ON_SERIAL_PORT=TRUE -n $(getconf _NPROCESSORS_ONLN) ${GCCVERS:+-t $GCCVERS} -a X64 -p OvmfPkg/AmdSev/AmdSevX64.dsc"
 ```
