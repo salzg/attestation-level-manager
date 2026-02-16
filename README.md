@@ -5,7 +5,7 @@ The Attestation Level Manager (ALman) is a tooling component for building Confid
 It implements the image creation part of a larger Confidential Computing Workload Owner stack by enabling Workload Owners to:
 
 - build VM images at explicit attestation levels
-- includes [snp-guest](https://github.com/virtee/snpguest) utility into every VM image
+- includes [snp-guest](https://github.com/virtee/snpguest) utility into every VM image under `/opt/snpguest`
 - deterministically derive Reference Values for those images
 
 ALman does not perform Attestation, verification, Policy evaluation, or secret release. You can check out my other repo [Simple Attestation Verifier Service (SAVS)](https://github.com/salzg/simple-attestation-verifier-service) for that or use community tools like [Trustee](https://github.com/confidential-containers/trustee).
